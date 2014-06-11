@@ -1,0 +1,31 @@
+{
+  "name": "transformer-resolve",
+  "version": "0.1.0",
+  "description": "transformer resolve",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbenet/transformer-resolve.git"
+  },
+  "keywords": [
+    "transformer",
+    "module",
+    "resolution"
+  ],
+  "author": "Juan Benet <juan@benet.ai> (http://juan.benet.ai/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbenet/transformer-resolve/issues"
+  },
+  "homepage": "https://github.com/jbenet/transformer-resolve",
+  "dependencies": {
+    "lodash.isobject": "^2.4.1",
+    "lodash.isstring": "^2.4.1",
+    "lodash.map": "^2.4.1",
+    "lodash.template": "^2.4.1",
+    "lodash.zip": "^2.4.1"
+  }
+}
