@@ -1,6 +1,6 @@
 {
   "name": "transformer-resolve",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "transformer resolve",
   "main": "index.js",
   "scripts": {
@@ -30,5 +30,6 @@
     "transformer-conversion": "^0.1.1",
     "transformer-loader": "^0.1.2",
     "transformer-type": "^0.1.0"
-  }
+  },
+  "devDependencies": {}
 }
