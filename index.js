@@ -15,6 +15,15 @@ function resolve(types) {
   return conversionPath(types)
 }
 
+// switch to resolving things globally.
+// it's super annoying to pass this flag in through every
+// function. I haven't found a use case where one would
+// want to resolve local + global simultaneously. So,
+// until then, this is good enough.
+resolve.useGlobalModules = function(useGlobalModules) {
+  coerce.global = useGlobalModules
+}
+
 function conversionPath(types) {
   var pairs = zip(types.slice(0, types.length - 1), types.slice(1))
   return map(pairs, function(pair) {
