@@ -70,6 +70,6 @@ To install them, run:\n\
 \n\
 ")
 
-  var modules = map(ids, Loader.NpmName)
+  var modules = map(ids, Loader.npmName)
   return tmpl({ ids: ids, modules: modules })
 }
