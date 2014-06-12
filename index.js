@@ -21,7 +21,7 @@ function resolve(types) {
 // want to resolve local + global simultaneously. So,
 // until then, this is good enough.
 resolve.useGlobalModules = function(useGlobalModules) {
-  coerce.global = useGlobalModules
+  coerce.useGlobalModules = useGlobalModules
 }
 
 function conversionPath(types) {

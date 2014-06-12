@@ -14,7 +14,7 @@ module.exports = function coerce(obj) {
 
   // string? load module.
   if (isString(obj))
-    return Loader(obj, this.global)
+    return Loader(obj, this.useGlobalModules)
 
   // transformer object? all good.
   if (obj instanceof Value ||
