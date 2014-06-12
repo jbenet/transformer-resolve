@@ -5,9 +5,9 @@ var coerce = require('./coerce')
 var Loader = require('transformer-loader')
 var Conversion = require('transformer-conversion')
 
-module.exports = transformerResolve
+module.exports = resolve
 
-function transformerResolve(types) {
+function resolve(types) {
   if (types.length < 2)
     throw new Error('Must enter more than one type.')
 
@@ -45,7 +45,7 @@ function withTypes(t1, t2) {
   }
 }
 
-transformerResolve.installMessage = function(ids) {
+resolve.installMessage = function(ids) {
     var tmpl = template("transformer needs the following npm modules to perform this conversion:\n\
 <% _.each(ids, function(m) { %>\n\
   - <%= m %>\

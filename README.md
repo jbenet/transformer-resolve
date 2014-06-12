@@ -8,8 +8,8 @@ WARNING: require magic.
 
 ```js
 var resolve = require('transformer-resolve')
-var a2b = resolve('a-to-b') // requires the module
+var a2c = resolve('a', 'b', 'c') // requires modules
 
 var dataA = ...
-var dataB = a2b(dataA)
+var dataC = a2c(dataA) // a -> a2b -> a2c -> c
 ```
