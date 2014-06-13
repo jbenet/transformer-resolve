@@ -7,14 +7,14 @@ var Object = Type.Object;
 var Value = Conversion.Value;
 
 
-module.exports = function coerce(obj) {
+module.exports = function coerce(obj, useGlobal) {
 
   if (!Conversion || !Type || !Value)
     resolveDeps();
 
   // string? load module.
   if (isString(obj))
-    return Loader(obj, this.useGlobalModules)
+    return Loader(obj, useGlobal)
 
   // transformer object? all good.
   if (obj instanceof Value ||

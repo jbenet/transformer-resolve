@@ -7,33 +7,27 @@ var Conversion = require('transformer-conversion')
 
 module.exports = resolve
 
-function resolve(types) {
+function resolve(types, useGlobal) {
   if (types.length < 2)
     throw new Error('Must enter more than one type.')
 
-  types = map(types, coerce)
-  return conversionPath(types)
+  types = map(types, function(t) {
+    return coerce(t, useGlobal)
+  })
+
+  return conversionPath(types, useGlobal)
 }
 
-// switch to resolving things globally.
-// it's super annoying to pass this flag in through every
-// function. I haven't found a use case where one would
-// want to resolve local + global simultaneously. So,
-// until then, this is good enough.
-resolve.useGlobalModules = function(useGlobalModules) {
-  coerce.useGlobalModules = useGlobalModules
-}
-
-function conversionPath(types) {
+function conversionPath(types, useGlobal) {
   var pairs = zip(types.slice(0, types.length - 1), types.slice(1))
   return map(pairs, function(pair) {
-    return withTypes(pair[0], pair[1])
+    return withTypes(pair[0], pair[1], useGlobal)
   })
 }
 
-function withTypes(t1, t2) {
+function withTypes(t1, t2, useGlobal) {
   function loadConversion(t1, t2) {
-    return coerce(t1.src.id + '-to-'+ t2.src.id)
+    return coerce(t1.src.id + '-to-'+ t2.src.id, useGlobal)
   }
 
   try {

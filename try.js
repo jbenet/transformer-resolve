@@ -4,5 +4,4 @@ if (process.argv.length >= 4)
 console.log('resolving: ' + args)
 
 var resolve = require('./')
-resolve.useGlobalModules(true)
-console.log(resolve(args))
+console.log(resolve(args, true))
