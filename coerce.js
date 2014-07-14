@@ -9,9 +9,6 @@ var Value = Conversion.Value;
 
 module.exports = function coerce(obj, useGlobal) {
 
-  if (!Conversion || !Type || !Value)
-    resolveDeps();
-
   // string? load module.
   if (isString(obj))
     return Loader(obj, useGlobal)
@@ -38,9 +35,3 @@ module.exports = function coerce(obj, useGlobal) {
   console.log(obj);
   throw new Error('transformer: unknown input object: ' + obj);
 };
-
-function resolveDeps() {
-  Type = require('./type');
-  Value = require('./value');
-  Conversion = require('./conversion');
-}
